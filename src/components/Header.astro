@@ -1,0 +1,46 @@
+---
+const pages = [
+  { text: 'Home', href: '/' },
+  { text: 'About', href: '/about' },
+  { text: 'Services', href: '/services' },
+  { text: 'Portfolio', href: '/portfolio' },
+  { text: 'Contact', href: '/contact' }
+];
+---
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <!-- Site Logo / Title -->
+    <a class="navbar-brand" href="/">My Astro Site</a>
+    
+    <!-- Burger Menu Button (for mobile view) -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <!-- Navigation Links -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        {pages.map((page) => (
+          <li class="nav-item">
+            <a class="nav-link" href={page.href}>{page.text}</a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<style>
+  /* Additional styling (optional) */
+  .navbar {
+    padding: 1rem;
+  }
+
+  .nav-link {
+    padding: 0.5rem 1rem;
+  }
+
+  .navbar-brand {
+    font-weight: bold;
+  }
+</style>
